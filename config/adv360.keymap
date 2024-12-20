@@ -106,10 +106,10 @@
 
         keypad {
             bindings = <
-&kp EQUAL  &kp CARET  &e_circum     &e_acute              &e_grave           &kp DOLLAR      &trans                                                   &mo 3           &kp N6         &kp KP_NUM  &kp KP_EQUAL  &kp KP_DIVIDE  &kp KP_MULTIPLY  &kp MINUS
-&kp TAB    &u_grave   &kp HASH      &kp LEFT_BRACE        &kp RIGHT_BRACE    &kp BACKSLASH   &none                                                    &kp LA(LS(N2))  &kp LA(Y)      &kp KP_N7   &kp KP_N8     &kp KP_N9      &kp KP_MINUS     &kp BSLH
-&kp ESC    &a_grave   &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RPAR           &kp AMPERSAND   &none     &kp LCTRL  &kp LALT      &kp LGUI   &kp RCTRL  &none           &kp PERCENT    &kp KP_N4   &kp KP_N5     &kp KP_N6      &kp KP_PLUS      &kp SQT
-&kp LSHFT  &o_circum  &kp AT_SIGN   &kp LEFT_BRACKET      &kp RIGHT_BRACKET  &kp UNDERSCORE                       &kp HOME      &kp PG_UP                             &kp LA(LS(R))  &kp KP_N1   &kp KP_N2     &kp KP_N3      &kp KP_ENTER     &kp RSHFT
+&kp EQUAL  &kp CARET  &E_CIRCUM     &E_ACUTE              &E_GRAVE           &kp DOLLAR      &trans                                                   &mo 3           &kp N6         &kp KP_NUM  &kp KP_EQUAL  &kp KP_DIVIDE  &kp KP_MULTIPLY  &kp MINUS
+&kp TAB    &U_GRAVE   &kp HASH      &kp LEFT_BRACE        &kp RIGHT_BRACE    &kp BACKSLASH   &none                                                    &kp LA(LS(N2))  &kp LA(Y)      &kp KP_N7   &kp KP_N8     &kp KP_N9      &kp KP_MINUS     &kp BSLH
+&kp ESC    &A_GRAVE   &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RPAR           &kp AMPERSAND   &none     &kp LCTRL  &kp LALT      &kp LGUI   &kp RCTRL  &none           &kp PERCENT    &kp KP_N4   &kp KP_N5     &kp KP_N6      &kp KP_PLUS      &kp SQT
+&kp LSHFT  &O_CIRCUM  &kp AT_SIGN   &kp LEFT_BRACKET      &kp RIGHT_BRACKET  &kp UNDERSCORE                       &kp HOME      &kp PG_UP                             &kp LA(LS(R))  &kp KP_N1   &kp KP_N2     &kp KP_N3      &kp KP_ENTER     &kp RSHFT
 &mo 2      &kp GRAVE  &kp CAPS      &kp LESS_THAN         &kp GREATER_THAN                   &kp BSPC  &kp DEL    &kp END       &kp PG_DN  &kp ENTER  &kp KP_N0                      &kp UP      &kp DOWN      &kp KP_DOT     &kp RBKT         &mo 2
             >;
         };
@@ -117,10 +117,10 @@
         fn {
             bindings = <
 &kp F1  &kp F2     &kp F3     &kp F4              &kp F5    &kp F6  &tog 1                                      &mo 3   &kp F7            &kp F8                &kp F9                 &kp F10       &kp F11         &kp F12
-&trans  &kp LA(Q)  &o_circum  &kp LA(UNDERSCORE)  &u_grave  &trans  &none                                       &none   &kp CARET         &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp PERCENT   &kp DOLLAR      &trans
-&trans  &a_grave   &e_circum  &e_acute            &e_grave  &trans  &none   &trans  &trans      &trans  &trans  &none   &kp AMPERSAND     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp ASTERISK  &kp SLASH       &trans
+&trans  &kp LA(Q)  &O_CIRCUM  &kp LA(UNDERSCORE)  &U_GRAVE  &trans  &none                                       &none   &kp CARET         &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp PERCENT   &kp DOLLAR      &trans
+&trans  &A_GRAVE   &E_CIRCUM  &E_ACUTE            &E_GRAVE  &trans  &none   &trans  &trans      &trans  &trans  &none   &kp AMPERSAND     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp ASTERISK  &kp SLASH       &trans
 &trans  &trans     &trans     &trans              &trans    &trans                  &trans      &trans                  &kp LEFT_BRACKET  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp POUND     &kp UNDERSCORE  &trans
-&trans  &trans     &trans     &trans              &trans            &trans  &trans  &trans      &trans  &trans  &trans                    &kp LESS_THAN         &kp GREATER_THAN       &slim_arrow   &fat_arrow      &trans
+&trans  &trans     &trans     &trans              &trans            &trans  &trans  &trans      &trans  &trans  &trans                    &kp LESS_THAN         &kp GREATER_THAN       &SLIM_ARROW   &FAT_ARROW      &trans
             >;
         };
 
