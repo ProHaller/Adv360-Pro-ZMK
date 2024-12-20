@@ -77,3 +77,13 @@
         };
     };
 };
+
+/ {
+    macros {
+        #define U_EACUTE 0x00E9    // é
+        #define U_EGRAVE 0x00E8    // è
+        #define U_AGRAVE 0x00E0    // à
+        #define U_CCEDILLA 0x00E7  // ç
+        #define U_UGRAVE 0x00F9    // ù
+    };
+};
