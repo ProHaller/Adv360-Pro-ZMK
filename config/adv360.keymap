@@ -16,7 +16,6 @@
             #binding-cells = <0>;
             bindings = <&kp RET>;
         };
-
         #endif
         e_acute: e_acute {
             compatible = "zmk,behavior-macro";
@@ -118,7 +117,7 @@
 &trans  &kp LA(Q)  &o_circum  &kp LA(UNDERSCORE)  &u_grave  &trans  &none                                       &none   &kp CARET         &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp PERCENT   &kp DOLLAR      &trans
 &trans  &a_grave   &e_circum  &e_acute            &e_grave  &trans  &none   &trans  &trans      &trans  &trans  &none   &kp AMPERSAND     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp ASTERISK  &kp SLASH       &trans
 &trans  &trans     &trans     &trans              &trans    &trans                  &trans      &trans                  &kp LEFT_BRACKET  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp POUND     &kp UNDERSCORE  &trans
-&trans  &trans     &trans     &trans              &trans            &trans  &trans  &trans      &trans  &trans  &trans                    &kp LESS_THAN         &kp GREATER_THAN       &SLIM_ARROW   &FAT_ARROW      &trans
+&trans  &trans     &trans     &trans              &trans            &trans  &trans  &trans      &trans  &trans  &trans                    &kp LESS_THAN         &kp GREATER_THAN       &slim_arrow   &fat_arrow      &trans
             >;
         };
 
