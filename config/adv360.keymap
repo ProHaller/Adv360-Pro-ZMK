@@ -1,28 +1,28 @@
-#include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/mouse.h>      // Added from previous discussion
 #include <dt-bindings/zmk/stp.h>        // From base
-#include <dt-bindings/zmk/backlight.h>  // From base
-#include <dt-bindings/zmk/pointing.h>   // From base
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/backlight.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/rgb.h>
 
 / {
     behaviors {
-      #include "macros.dtsi"
+        #include "macros.dtsi"
       #include "version.dtsi"
 
       // Fallback macro_ver definition from the "new" version
       #ifndef VERSION_MACRO
-        macro_ver: macro_ver { // Note: If version.dtsi defines macro_ver, this won't be used.
+
+        macro_ver: macro_ver {
             compatible = "zmk,behavior-macro";
             label = "macro_version_fallback"; // Changed label to distinguish if used
             #binding-cells = <0>;
             bindings = <&kp RET>; // Or your preferred fallback version output
         };
-      #endif
 
-      // Behaviors from the "new" version
+        #endif = // Behaviors from the "new" version;
+
         e_acute: e_acute {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -87,6 +87,7 @@
             quick_tap_ms = <175>;
             flavor = "balanced"; // Or "tap-preferred" if you prefer the base version's "hm"
             bindings = <&kp>, <&kp>;
+
             hold-trigger-key-positions = <7 8 9 10 11 12 13 21 22 23 24 25 26 27 38 39 40 41 42 43 44 45 54 55 56 57 58 59 69 70 71 72 73 74 75 35 36 37 38 52 53 65 66 69 70 67 68>;
         };
 
@@ -98,6 +99,7 @@
             quick_tap_ms = <175>;
             flavor = "balanced"; // Or "tap-preferred"
             bindings = <&kp>, <&kp>;
+
             hold-trigger-key-positions = <0 1 2 3 4 5 6 14 15 16 17 18 19 20 28 29 30 31 32 33 34 35 36 46 47 48 49 50 51 52 60 61 62 63 64 65 66 67 37 38 53 69 70 68>;
         };
 
@@ -105,6 +107,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_RIGHT";
             bindings = <&mo>, <&kp>;
+
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "balanced";
@@ -116,12 +119,16 @@
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_LEFT";
             bindings = <&mo>, <&kp>;
+
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "balanced";
             hold-trigger-key-positions = <7 8 9 10 11 12 13 21 22 23 24 25 26 27 35 36 37 38 39 40 41 42 43 44 45 52 53 54 55 56 57 58 59 67 68 69 70 71 72 73 74 75 65 66>;
             require-prior-idle-ms = <175>;
         };
+    };
+
+    macros {
     };
 
     keymap {
@@ -131,7 +138,7 @@
             bindings = <
 &lt 2 CAPS  &kp RS(N1)    &kp RS(N2)       &kp RS(N3)        &kp RS(N4)         &kp RS(N5)  &tog 1                                                                                      &mo 3        &kp LS(N6)  &kp LS(N7)          &kp LS(N8)        &kp LS(N9)        &kp LS(N0)            &kp MINUS
 &kp TAB     &kp Q         &kp W            &ltl 2 E          &kp R              &kp T       &kp EQUAL                                                                                   &kp AT_SIGN  &kp Y       &kp U               &ltr 2 I          &kp O             &kp P                 &kp BSLH
-&kp ESC  &hml LCTRL A  &hml LEFT_ALT S  &hml LEFT_GUI D   &hml LEFT_SHIFT F  &kp G       &kp LANG2  &key_repeat  &kp LS(LA(LC(LEFT_GUI)))      &kp RS(RA(RC(RIGHT_GUI)))  &kp F12    &kp LANG1    &kp H       &hmr RIGHT_SHIFT J  &hmr RIGHT_GUI K  &hmr RIGHT_ALT L  &hmr RCTRL SEMICOLON  &kp SQT
+&kp ESC     &hml LCTRL A  &hml LEFT_ALT S  &hml LEFT_GUI D   &hml LEFT_SHIFT F  &kp G       &kp LANG2  &key_repeat  &kp LS(LA(LC(LEFT_GUI)))      &kp RS(RA(RC(RIGHT_GUI)))  &kp F12    &kp LANG1    &kp H       &hmr RIGHT_SHIFT J  &hmr RIGHT_GUI K  &hmr RIGHT_ALT L  &hmr RCTRL SEMICOLON  &kp SQT
 &kp LSHFT   &kp Z         &kp X            &kp C             &kp V              &kp B                               &kp HOME                      &kp PG_UP                                          &kp N       &kp M               &kp COMMA         &kp DOT           &kp FSLH              &kp RSHFT
 &kp GRAVE   &kp LEFT_ALT  &kp LEFT_GUI     &kp LEFT_BRACKET  &kp RIGHT_BRACKET              &kp BSPC   &kp DEL      &kp END                       &kp PG_DN                  &kp ENTER  &lt 1 SPACE              &kp LEFT            &kp DOWN          &kp UP            &kp RIGHT             &mo 2
             >;
@@ -139,14 +146,13 @@
 
         keypad {
             bindings = <
-&trans     &kp CARET  &e_circum     &e_acute              &e_grave           &kp DOLLAR      &trans                                                 &mo 3           &kp N6         &kp KP_NUM  &kp KP_EQUAL     &kp KP_DIVIDE  &kp KP_MULTIPLY  &kp MINUS
-&trans    &u_grave   &kp HASH      &kp LEFT_BRACE        &kp RIGHT_BRACE    &kp BACKSLASH   &trans                                                 &kp LA(LS(N2))  &kp LA(Y)      &kp KP_N7   &kp KP_N8        &kp KP_N9      &kp KP_MINUS     &kp BSLH
-&trans    &a_grave   &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RPAR           &kp AMPERSAND   &trans    &trans   &trans        &trans     &trans     &trans          &kp PERCENT    &kp KP_N4   &kp KP_N5        &kp KP_N6      &kp KP_PLUS      &kp SQT
+&trans  &kp CARET  &e_circum     &e_acute              &e_grave           &kp DOLLAR      &trans                                                 &mo 3           &kp N6         &kp KP_NUM  &kp KP_EQUAL     &kp KP_DIVIDE  &kp KP_MULTIPLY  &kp MINUS
+&trans  &u_grave   &kp HASH      &kp LEFT_BRACE        &kp RIGHT_BRACE    &kp BACKSLASH   &trans                                                 &kp LA(LS(N2))  &kp LA(Y)      &kp KP_N7   &kp KP_N8        &kp KP_N9      &kp KP_MINUS     &kp BSLH
+&trans  &a_grave   &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RPAR           &kp AMPERSAND   &trans    &trans   &trans        &trans     &trans     &trans          &kp PERCENT    &kp KP_N4   &kp KP_N5        &kp KP_N6      &kp KP_PLUS      &kp SQT
 &trans  &o_circum  &kp AT_SIGN   &kp LEFT_BRACKET      &kp RIGHT_BRACKET  &kp UNDERSCORE                     &kp HOME      &kp PG_UP                             &kp LA(LS(R))  &kp KP_N1   &kp KP_N2        &kp KP_N3      &trans           &kp RSHFT
 &trans  &trans     &trans        &kp LESS_THAN         &kp GREATER_THAN                   &kp BSPC  &kp DEL  &kp END       &kp PG_DN  &kp ENTER  &kp SPACE                      &kp EQUAL   &kp KP_NUMBER_0  &kp KP_DOT     &kp RBKT         &mo 2
             >;
         };
-
 
         fn {
             bindings = <
@@ -160,33 +166,34 @@
 
         mod {
             bindings = <
-&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none                                                  &trans                  &none  &none       &none       &none  &none  &none
-&none  &none         &none         &none         &none         &none         &bootloader                                            &bootloader             &none  &none       &none       &none  &none  &none
-&none  &none         &none         &none         &none         &none         &none        &none  &none      &bt BT_CLR  &none       &rgb_ug RGB_MEFS_CMD 5  &none  &none       &none       &none  &none  &none
-&none  &none         &none         &none         &macro_ver    &none                             &none      &none                                           &none  &none       &none       &none  &none  &none
-&none  &none         &none         &none         &none                       &none        &none  &none      &none       &bl BL_TOG  &rgb_ug RGB_TOG                &bl BL_INC  &bl BL_DEC  &none  &none  &none
+&none   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none                                                  &trans                  &none  &none       &none       &none  &none  &none
+&none   &none         &none         &none         &none         &none         &bootloader                                            &bootloader             &none  &none       &none       &none  &none  &none
+&trans  &none         &none         &none         &none         &none         &none        &none  &none      &bt BT_CLR  &none       &rgb_ug RGB_MEFS_CMD 5  &none  &none       &none       &none  &none  &none
+&none   &none         &none         &none         &macro_ver    &none                             &none      &none                                           &none  &none       &none       &none  &none  &none
+&none   &none         &none         &none         &none                       &none        &none  &none      &none       &bl BL_TOG  &rgb_ug RGB_TOG                &bl BL_INC  &bl BL_DEC  &none  &none  &none
             >;
         };
 
         // Extra layers from the base version
+
         extra1 {
-          display-name = "Red";
-          status = "reserved";
+            display-name = "Red";
+            status = "reserved";
         };
 
         extra2 {
-          display-name = "Purple";
-          status = "reserved";
+            display-name = "Purple";
+            status = "reserved";
         };
 
         extra3 {
-          display-name = "Cyan";
-          status = "reserved";
+            display-name = "Cyan";
+            status = "reserved";
         };
 
         extra4 {
-          display-name = "Yellow";
-          status = "reserved";
+            display-name = "Yellow";
+            status = "reserved";
         };
     };
 };
